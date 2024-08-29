@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Winner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body style="font-family: 'Roboto', sans-serif;" onload="playWinSound()">
+    <div class="container">
+        <h1>Congratulations, {{ winner }}! You won the game!</h1>
+        <form method="get" action="{{ url_for('restart') }}">
+            <button type="submit" class="btn-exit">Play Again</button>
+        </form>
+    </div>
+</body>
+</html>

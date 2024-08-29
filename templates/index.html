@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Roboto', sans-serif;">
+    <div class="container">
+        <h1>Welcome to the Dice Game</h1>
+        <form method="post" class="player-form">
+            <label for="player1">Player 1:</label>
+            <input type="text" name="player1" id="player1" required><br><br>
+            <label for="player2">Player 2:</label>
+            <input type="text" name="player2" id="player2" required><br><br>
+            <button type="submit" class="btn-start">Start Game</button>
+        </form>
+    </div>
+</body>
+</html>

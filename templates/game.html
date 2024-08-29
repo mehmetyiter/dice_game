@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body style="font-family: 'Roboto', sans-serif;">
+    <div class="container">
+        <h1>Dice Game</h1>
+        <div class="scoreboard">
+            <div class="player-score">
+                <h2>Player 1: {{ session['player1'] }}</h2>
+                <p>Score: <span>{{ session['player1_score'] }}</span></p>
+            </div>
+            <div class="player-score">
+                <h2>Player 2: {{ session['player2'] }}</h2>
+                <p>Score: <span>{{ session['player2_score'] }}</span></p>
+            </div>
+        </div>
+        <div class="game-info">
+            <h3>{{ session[session['turn']] }}'s turn</h3>
+            <h4>Current Round Score: {{ session['current_score'] }}</h4>
+        </div>
+        <div class="dice">
+            <img id="diceImage" src="{{ url_for('static', filename='dice_images/Die%d.bmp' % dice_value) }}" alt="Dice">
+        </div>
+        <form method="post" class="actions">
+            <button type="submit" name="action" value="roll" class="btn-action" onclick="animateDice()">Roll Dice</button>
+            <button type="submit" name="action" value="hold" class="btn-action">Hold</button>
+        </form>
+        <form method="get" action="{{ url_for('restart') }}">
+            <button type="submit" class="btn-exit">Exit</button>
+        </form>
+    </div>
+</body>
+</html>
