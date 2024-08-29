@@ -1,0 +1,113 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+h1 {
+    color: #333;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.player-score h2 {
+    color: #007BFF;
+}
+
+.player-score p {
+    font-size: 18px;
+}
+
+.game-info {
+    margin: 20px 0;
+}
+
+.dice img {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-start, .btn-action, .btn-exit {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-start:hover, .btn-action:hover, .btn-exit:hover {
+    background-color: #0056b3;
+}
+
+.btn-exit {
+    background-color: #dc3545;
+}
+
+.btn-exit:hover {
+    background-color: #c82333;
+}
+
+.player-form label {
+    font-weight: bold;
+}
+
+.player-form input {
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.player-form input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .scoreboard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .player-score {
+        margin-bottom: 20px;
+    }
+
+    .dice img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .btn-start, .btn-action, .btn-exit {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

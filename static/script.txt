@@ -1,0 +1,21 @@
+function animateDice() {
+    const diceImage = document.getElementById('diceImage');
+    const rollSound = new Audio('/static/sounds/roll.mp3');
+    rollSound.play();
+    let counter = 0;
+
+    const animation = setInterval(() => {
+        const randomDice = Math.floor(Math.random() * 6) + 1;
+        diceImage.src = `/static/dice_images/Die${randomDice}.bmp`;
+        counter++;
+
+        if (counter > 10) {  // Number of frames in the animation
+            clearInterval(animation);
+        }
+    }, 100);  // Speed of the animation in milliseconds
+}
+
+function playWinSound() {
+    const winSound = new Audio('/static/sounds/win.mp3');
+    winSound.play();
+}
